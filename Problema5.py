@@ -64,8 +64,3 @@ for recurso in recursos:
         print(error)
         print("-----------------------------------")
 
-        print(f"Clasificación: {clasificacion}")
-        print("-----------------------------------")
-
-    except ValueError as error:
-        print(error)
