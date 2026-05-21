@@ -32,6 +32,7 @@ for recurso in recursos:
         # Validar nombre vacío
         if nombre.strip() == "":
             print("Error: nombre inválido\n")
+            print("-----------------------------------")
             continue
 
         # Obtener horas trabajadas
@@ -40,12 +41,12 @@ for recurso in recursos:
         # Validar que todos los datos sean numéricos
         for hora in horas:
             if not isinstance(hora, (int, float)):
-                raise ValueError("Error: dato inválido")
+                raise ValueError(nombre +" Error: dato inválido")
 
         # Validar horas negativas
         for hora in horas:
             if hora < 0:
-                raise ValueError("Error: existen horas inválidas")
+                raise ValueError(nombre + " Error: existen horas inválidas")
 
         # Calcular total de horas
         total_horas = sum(horas)
@@ -56,6 +57,13 @@ for recurso in recursos:
         # Mostrar resultados
         print(f"Recurso: {nombre}")
         print(f"Total de horas: {total_horas}")
+        print(f"Clasificación: {clasificacion}")
+        print("-----------------------------------")
+
+    except ValueError as error:
+        print(error)
+        print("-----------------------------------")
+
         print(f"Clasificación: {clasificacion}")
         print("-----------------------------------")
 
